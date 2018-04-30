@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-offset-3 col-md-8">
+    <form class="form">
+      <div class="form-group">
+        <label>Product ID</label>
+        <input type="text" name="productId" class="form-control" [(ngModel)]="pdt.productId" />
+      </div>
+      <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" name="productName" class="form-control" [(ngModel)]="pdt.productName" />
+      </div>
+      <div class="form-group">
+        <label>Product Code</label>
+        <input type="text" name="productCode" class="form-control" [(ngModel)]="pdt.productCode" />
+      </div>
+      <div class="form-group">
+        <label>description</label>
+        <input type="text" name="description" class="form-control" [(ngModel)]="pdt.description" />
+      </div>
+      <div class="form-group">
+        <label>price</label>
+        <input type="text" name="price" class="form-control" [(ngModel)]="pdt.price" />
+      </div>
+      <div class="form-group">
+        <label>starRating</label>
+        <input type="text" name="starRating" class="form-control" [(ngModel)]="pdt.starRating" />
+      </div>
+      <div class="form-group">
+        <label>imageUrl</label>
+        <input type="text" name="imageUrl" class="form-control" [(ngModel)]="pdt.imageUrl" />
+      </div>
+      <button (click)="createProduct()" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+</div>

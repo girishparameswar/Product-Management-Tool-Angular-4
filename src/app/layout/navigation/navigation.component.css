@@ -1,0 +1,8 @@
+div {
+    background-color: black;
+}
+
+li:hover{
+    background-color: white;
+    -webkit-text-fill-color: black;
+}

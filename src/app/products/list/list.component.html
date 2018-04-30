@@ -1,0 +1,44 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{pageTitle}}
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        <input type="text" class="form-control" [(ngModel)]="filterVar" placeholder="Filter Products" /><br />
+      </div>
+    </div>
+    <div class="alert alert-info" *ngIf="filterVar && filterVar.length">
+      Products filtered by : {{filterVar}}
+    </div>
+    <table class="table table-bordered" *ngIf="products && products.length">
+      <tr>
+        <th>
+          <button class="btn btn-primary" (click)="toggleImg()">
+            {{showHideImg ? 'Hide Image' : 'Show Image'}}
+          </button>
+        </th>
+        <th>Product Name</th>
+        <th>Product Code</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let product of products | produt:filterVar">
+        <td>
+          <img *ngIf="showHideImg" [src]="product.imageUrl" [style.width.px]="imgWidth" />
+        </td>
+        <td>{{product.productName}}</td>
+        <td>{{product.productCode}}</td>
+        <td>{{product.price}}</td>
+        <td>
+          <app-rating [rating]='product.starRating' (ratingClicked)="acceptRatingFromChild($event)"></app-rating>
+        </td>
+        <td>
+          <a href="#" [routerLink]="['edit', product.productCode]">Edit</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
